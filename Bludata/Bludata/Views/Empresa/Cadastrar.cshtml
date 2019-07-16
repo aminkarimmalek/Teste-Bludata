@@ -1,0 +1,35 @@
+﻿@model MySqlASPNetMVC.Models.Empresa
+@{
+    ViewBag.Title = "Cadastrar Empresa";
+}
+
+<div class="page-header">
+    <h1>Empresa <small>organize o cadastro de empresas</small></h1>
+</div>
+
+<form method="POST" action="">
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Nova Empresa</legend>
+        <div class="form-group">
+            <label for="NOME_FANTASIA">Nome da Empresa</label>
+            <input id="NOME_FANTASIA" name="NOME_FANTASIA" type="text" class="form-control" placeholder="Digite o nome da Empresa">
+            @Html.ValidationMessageFor(x => x.NOME_FANTASIA)
+        </div>
+        <div class="form-group">
+            <label for="CNPJ">Cnpj</label>
+            <input id="CNPJ" name="CNPJ" type="text" class="form-control" placeholder="Digite o CNPJ da Empresa">
+            @Html.ValidationMessageFor(x => x.CNPJ)
+        </div>
+        <div class="form-group">
+            <label for="Nome">Estado</label>
+            @Html.ValidationMessageFor(x => x.CD_ESTADO)
+            @Html.DropDownList("CD_ESTADO", ViewBag.Estados as SelectList)
+        </div>
+        <hr />
+        <p>
+            <button type="submit" class="btn btn-sm btn-info">Salvar</button>
+            <a href="@Url.Action("Index","Home")">Cancelar</a>
+        </p>
+    </fieldset>
+</form>

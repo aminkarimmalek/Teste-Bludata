@@ -1,0 +1,22 @@
+﻿@model MySqlASPNetMVC.Models.Fornecedor
+@{
+    ViewBag.Title = "Detalhe Fornecedor";
+}
+
+<div class="page-header">
+    <h1>Fornecedor <small>organize o cadastro de fornecedors</small></h1>
+    <a href="@Url.Action("Cadastrar","Fornecedor")" class="btn btn-sm btn-primary">Nova Fornecedor</a>
+</div>
+
+<fieldset>
+    <legend>Detalhes da Fornecedor</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> @Model.NM_FORNECEDOR
+    </div>
+</fieldset>
+
+<hr />
+<p>
+    <a href="@Url.Action("Editar","Fornecedor", new{Id=Model.Id})" class="btn btn-sm btn-info">Editar</a>
+    <a href="@Url.Action("Index","Home")">Voltar</a>
+</p>

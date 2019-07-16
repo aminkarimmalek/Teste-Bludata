@@ -1,0 +1,30 @@
+﻿@model MySqlASPNetMVC.Models.Estado
+@{
+    ViewBag.Title = "Editar Estado";
+}
+
+<div class="page-header">
+    <h1>Estado <small>organize o cadastro de estados</small></h1>
+    <a href="@Url.Action("Cadastrar","Estado")" class="btn btn-sm btn-primary">Nova Estado</a>
+</div>
+
+<form method="POST" action="">
+    @Html.ValidationSummary(true)
+    <fieldset>
+        
+        <input id="Id" name="Id" type="hidden" value="@Model.CD_ESTADO" />
+        
+        <legend>Nova Estado</legend>
+        <div class="form-group">
+            <label for="Nome">Nome da Estado</label>
+            <input id="Nome" name="Nome" type="text" value="@Model.DS_ESTADO" class="form-control" placeholder="Digite o nome da sala">
+            @Html.ValidationMessageFor(x => x.DS_ESTADO)
+        </div>
+
+        <hr />
+        <p>
+            <button type="submit" class="btn btn-sm btn-info">Salvar</button>
+            <a href="@Url.Action("Index","Home")">Cancelar</a>
+        </p>
+    </fieldset>
+</form>

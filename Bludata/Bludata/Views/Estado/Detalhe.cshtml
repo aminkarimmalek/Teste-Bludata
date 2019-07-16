@@ -1,0 +1,22 @@
+﻿@model MySqlASPNetMVC.Models.Estado
+@{
+    ViewBag.Title = "Detalhe Estado";
+}
+
+<div class="page-header">
+    <h1>Estado <small>organize o cadastro de estados</small></h1>
+    <a href="@Url.Action("Cadastrar","Estado")" class="btn btn-sm btn-primary">Nova Estado</a>
+</div>
+
+<fieldset>
+    <legend>Detalhes da Estado</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> @Model.DS_ESTADO
+    </div>
+</fieldset>
+
+<hr />
+<p>
+    <a href="@Url.Action("Editar","Home", new{Id=Model.CD_ESTADO})" class="btn btn-sm btn-info">Editar</a>
+    <a href="@Url.Action("Index","Home")">Voltar</a>
+</p>

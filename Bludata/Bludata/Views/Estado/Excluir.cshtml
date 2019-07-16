@@ -1,0 +1,27 @@
+﻿@model MySqlASPNetMVC.Models.Estado
+@{
+    ViewBag.Title = "Excluir esta Estado?";
+}
+
+<div class="page-header">
+    <h1>Estado <small>organize o cadastro de estados</small></h1>
+    <a href="@Url.Action("Cadastrar","Home")" class="btn btn-sm btn-primary">Nova Estado</a>
+</div>
+<div class="alert alert-danger">
+    <strong>Atenção!</strong> Deseja realmente excluir este registro?
+</div>
+<fieldset>
+    <legend>Detalhes da Estado</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> @Model.DS_ESTADO
+    </div>
+</fieldset>
+
+<hr />
+<form method="POST" action="">
+    <input type="hidden" value="@Model.CD_ESTADO" name="Id" id="Id" />
+    <p>
+        <button type="submit" class="btn btn-sm btn-info">Excluir</button>
+        <a href="@Url.Action("Index","Home")">Cancelar</a>
+    </p>
+</form>

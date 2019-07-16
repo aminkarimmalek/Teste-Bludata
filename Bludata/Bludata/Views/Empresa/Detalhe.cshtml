@@ -1,0 +1,22 @@
+﻿@model MySqlASPNetMVC.Models.Empresa
+@{
+    ViewBag.Title = "Detalhe Empresa";
+}
+
+<div class="page-header">
+    <h1>Empresa <small>organize o cadastro de empresas</small></h1>
+    <a href="@Url.Action("Cadastrar","Empresa")" class="btn btn-sm btn-primary">Nova Empresa</a>
+</div>
+
+<fieldset>
+    <legend>Detalhes da Empresa</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> @Model.NOME_FANTASIA
+    </div>
+</fieldset>
+
+<hr />
+<p>
+    <a href="@Url.Action("Editar","Empresa", new{Id=Model.Id})" class="btn btn-sm btn-info">Editar</a>
+    <a href="@Url.Action("Index","Home")">Voltar</a>
+</p>
